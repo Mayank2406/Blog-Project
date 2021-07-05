@@ -1,0 +1,103 @@
+<%- include ("partials/header") %>
+
+
+<div style="margin-top: -4em;" class="jumbotron jumbotron-fluid img-responsive banner ">
+    <div class="container">
+        <div class="contentBox">
+            <div>
+                <h1>Blogging is Fun</h1>
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="main-section" style="margin-top: 8%;">  
+
+    <div class="row">
+        <div class="col-md-10">
+            <div class="left-sidebar"  style="padding: 1.6rem! important;">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <% blogs.forEach(function(blog){ %>
+                <div class="col mb-3">
+                    <div class="card shadow h-100" style="max-width: 20rem;">
+                        <div class="inner">
+                         <img src="<%= blog.image %>" class="img-fluid"  alt="None">
+                        </div>
+                    <div class="card-body text-center">         
+                     <h6 class="card-title" style="text-align: left;float: left;" >
+                        <%= blog.title %>
+                     </h6>
+                         <p class="text-right text-muted" style="text-align:right;float: right;"> <span><%= blog.created.toDateString() %></span></p>       
+                            <hr style="clear: both;">
+                         <p class="card-text">
+                            <%- blog.body.substring(0,150) %>
+                         </p>
+                      <a class="btn btn-sm btn-outline-danger" href="/blogs/<%=blog._id%>">Read More</a>
+                        </div>
+                        </div>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="right-sidebar" style="padding: 2rem;display: flex;justify-content: flex-start;" >
+                <div class="row row-cols-1">
+                    <div class="col">
+                        <h4 class="font-italic" >Archives</h4>
+                        <ul class="list-unstyled">
+                        <a href="#"><li>June 2020</li></a>
+                        <a href="#"><li>May 2020</li></a>
+                        <a href="#"><li>April 2020</li></a>
+                        <a href="#"><li>March 2020</li></a>
+                        <a href="#"><li>February 2020</li></a>       
+                        <a href="#"><li>January 2020</li></a>
+                        <a href="#"><li>November 2020</li></a>
+                        <a href="#"><li>December 2020</li></a>     
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        
+    </div>
+  
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <h1 id="hello">RESTful Blog App</h1>
+<% blogs.forEach(function(blog){ %>
+        <div class="sec-1">
+            <ul class="list-unstyled">
+                <li class="media">
+                    <img src = "<%= blog.image %>" class="mr-3">
+                    <div class="media-body">
+                        <h3 class="mt-0 mb-1"><%= blog.title %></h3>
+                        <div> <span><%= blog.created.toDateString() %></span></div>
+                        <p><%- blog.body.substring(0,100) %></p>
+                        <div><a href="/blogs/<%=blog._id%>">Read More</a></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+<% }) %>
+</div> -->
+
+<%- include("partials/footer") %>
+
+
+
+
+

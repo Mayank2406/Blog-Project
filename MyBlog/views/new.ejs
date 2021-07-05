@@ -1,0 +1,27 @@
+<%- include ("partials/header") %>
+
+<div class="container" style="text-align: center;">
+    <div class="main-container">
+        <div class="border">
+            <div> <h1 id="mh1">New Blog</h1></div>
+        <form action="/blogs" method="POST">
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" name="blogs[title]" placeholder="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Image</label>
+                <input type="text" name="blogs[image]" placeholder="Image url" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Blog Content</label>
+                <textarea name="blogs[body]" cols="30" rows="8" placeholder="Write your blog here" class="form-control"></textarea>
+            </div>
+            <input type="submit" class="btn btn-outline-success" style="border-radius: 20px;">
+        </form>
+        </div>
+    </div> 
+</div>
+
+
+<%- include ("partials/footer") %>
